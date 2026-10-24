@@ -1,0 +1,19 @@
+name: unpack
+on: push
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          test -f bb-site.zip || exit 0
+          unzip -q -o bb-site.zip
+          rm bb-site.zip
+          git config user.name github-actions
+          git config user.email actions@github.com
+          git add -A
+          git commit -m "Unpack game files"
+          git push
