@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<link rel="icon" href="data:,"><title>Blackout Breach</title><link rel="stylesheet" href="style.css">
+<script src="https://sdk.crazygames.com/crazygames-sdk-v3.js"></script>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js","three/addons/":"./vendor/jsm/"}}</script>
+</head><body>
+<canvas id="c"></canvas>
+<div id="vignette"></div><div id="danger"></div><div id="alarm"></div><div id="goldflash"></div><div id="locker"></div><div id="static"></div>
+<div id="hud" class="hide">
+  <div id="tl"><div id="floor">FLOOR 1</div><div id="zone"></div><div id="cards"></div></div>
+  <div id="bars"><div class="bl">🔦</div><div class="bar"><i id="bat"></i></div><div class="bl">⚡</div><div class="bar st"><i id="sta"></i></div></div>
+  <div id="topr"><span id="time">0:00</span><span id="cans">🥫2</span><span id="coins">● 0</span><button id="mute" class="ib">🔊</button><button id="pause" class="ib">II</button></div>
+  <div id="eye"><i></i></div><div id="alarmTxt">⚠ ALARM</div>
+  <div id="prompt"></div><div id="msg"></div><div id="dot"></div>
+</div>
+<div id="touch" class="hide">
+  <div id="stick"><div id="knob"></div></div>
+  <div id="tbtns"><button class="tb" id="bLight">LIGHT</button><button class="tb" id="bRun">RUN</button><button class="tb" id="bThrow">THROW</button><button class="tb use" id="bUse">USE</button></div>
+</div>
+<div id="card" class="hide"><div class="cf">FLOOR 1</div><div class="cz">OFFICES</div><div class="co">Find 1 keycard · Reach the exit</div></div>
+<div id="elev" class="hide"><div class="ed l"></div><div class="ed r"></div><div class="ein"><div class="earrow">▲</div><div id="enum">1</div><div class="elab">ELEVATOR</div></div></div>
+<div id="trans"></div>
+<div id="screen">
+  <div id="title" class="panel">
+    <h1 class="glitch" data-t="BLACKOUT">BLACKOUT<span>BREACH</span></h1><p class="sub">The power is dead. The guards are not.</p>
+    <button id="play" class="big" disabled>LOADING…</button>
+    <button id="shopBtn" class="mid">UPGRADES</button>
+    <p id="best"></p>
+    <p class="help" id="helpDesk">WASD move · Mouse look · SHIFT sprint · F light · E use/hide · G or RMB throw can · ESC pause</p>
+  </div>
+  <div id="shop" class="panel hide">
+    <h2 id="shopTitle">UPGRADES</h2><div id="stars"></div><div id="scoins"></div><div id="ups"></div>
+    <div class="row"><button id="shopBack" class="mid">BACK</button><button id="nextFloor" class="big hide">ELEVATOR ▲</button></div>
+  </div>
+  <div id="dead" class="panel hide">
+    <h2 class="red glitch" data-t="CAUGHT">CAUGHT</h2><p id="deadInfo"></p>
+    <button id="revive" class="big">▶ CONTINUE (AD)</button>
+    <button id="retry" class="mid">RETRY FLOOR</button><button id="menu" class="mid">MENU</button>
+  </div>
+  <div id="win" class="panel hide"><h2>FACILITY ESCAPED</h2><div id="winStats"></div><button id="winMenu" class="big">MENU</button></div>
+  <div id="paused" class="panel hide"><h2>PAUSED</h2><button id="resume" class="big">RESUME</button><button id="quit" class="mid">QUIT</button></div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body></html>
